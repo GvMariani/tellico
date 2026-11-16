@@ -52,6 +52,7 @@ BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(poppler-qt6)
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(Qt6Charts)
+BuildRequires:	pkgconfig(Qt6Concurrent)
 BuildRequires:	pkgconfig(Qt6Core) >= 6.4.0
 BuildRequires:	pkgconfig(Qt6Gui)
 BuildRequires:	pkgconfig(Qt6DBus)
