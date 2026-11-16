@@ -1,18 +1,18 @@
 Summary:	A collection manager
 Name:		tellico
-Version:		4.2.2
-Release:		2
+Version:		4.3.1
+Release:		1
 Epoch:	3
-License:	GPLv2+
+License:	GPL-2.0-or-later
 Group:	Databases
 Url:		https://tellico-project.org/
 Source0:	https://tellico-project.org/download-tellico/%{name}-%{version}.tar.xz
-Patch0: tellico-4.2-fix-shebangs.patch
+Patch0: tellico-4.3.1-fix-shebangs.patch
 BuildRequires:	cmake >= 3.16
-BuildRequires:	make
 BuildRequires:	extra-cmake-modules >= 5.19
 BuildRequires:	gettext
 BuildRequires:	imagemagick
+BuildRequires:	make
 BuildRequires:	qt6-cmake
 BuildRequires:cmake(kcddb6)
 BuildRequires:cmake(kcompactdisc6)
@@ -52,6 +52,7 @@ BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(poppler-qt6)
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(Qt6Charts)
+BuildRequires:	pkgconfig(Qt6Concurrent)
 BuildRequires:	pkgconfig(Qt6Core) >= 6.4.0
 BuildRequires:	pkgconfig(Qt6Gui)
 BuildRequires:	pkgconfig(Qt6DBus)
@@ -64,9 +65,6 @@ BuildRequires:	pkgconfig(Qt6Xml)
 BuildRequires:	pkgconfig(taglib)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
-#Requires:	kdebase5runtime
-#Requires:	kdelibs5-core
-#Requires:	libKF5Libkdepim
 Requires(post,postun):	desktop-file-utils
 
 %description
@@ -89,21 +87,18 @@ directly from different web services such as amazon.com.
 %{_datadir}/mime/packages/%{name}.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_iconsdir}/hicolor/*/mimetypes/application-x-%{name}.png
-%{_datadir}/tellico/*.xsl
-%{_datadir}/tellico/*.png
-%{_datadir}/tellico/*.xml
-#{_kde5_datadir}/tellico/*.dtd
-#{_kde5_datadir}/tellico/*.tips
-%{_datadir}/tellico/*.cfg
-%{_datadir}/tellico/*.html
-%{_datadir}/tellico/*.js
-%{_datadir}/tellico/pics/*
-%{_datadir}/tellico/entry-templates/*
-%{_datadir}/tellico/data-sources/*
-%{_datadir}/tellico/report-templates/*
+%{_datadir}/%{name}/*.xsl
+%{_datadir}/%{name}/*.png
+%{_datadir}/%{name}/*.xml
+%{_datadir}/%{name}/*.cfg
+%{_datadir}/%{name}/*.html
+%{_datadir}/%{name}/*.js
+%{_datadir}/%{name}/pics/*
+%{_datadir}/%{name}/entry-templates/*
+%{_datadir}/%{name}/data-sources/*
+%{_datadir}/%{name}/report-templates/*
 %{_datadir}/kconf_update/*
 %{_datadir}/knsrcfiles/*.knsrc
-#{_kde5_xmlguidir}/tellico/tellicoui.rc
 
 #--------------------------------------------------------------------
 
